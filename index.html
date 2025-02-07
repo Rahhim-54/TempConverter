@@ -5,7 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Result Based on Selected Option</title>
-    <link href="temp.css" rel="stylesheet">
+    <style>
+        .box {
+            background-color: beige;
+            height: 290px;
+            width: 230px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 2px 2px grey;
+
+
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 93vh;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 2px inset black;
+        }
+
+        input:hover {
+            color: blue;
+        }
+
+        select:hover {
+            color: green;
+        }
+
+        h5 {
+
+            animation: slide1 0.8s ease-out;
+        }
+
+        @keyframes slide1 {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        #result {
+            color: black;
+            margin: right 800px;
+            text-align: center;
+            font-weight: bolder;
+
+            animation: slide 6s ease-in-out;
+
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
 
 <body style="background-color:yellowgreen">
@@ -20,7 +85,6 @@
 
             <select id="mySelect" onchange="showResult()" style="margin-left:29px;">
                 <option value="" style="color:red;" disabled selected>Choose Conversion Type</option>
-
                 <option value="1">Celsius To Kelvin</option>
                 <option value="2">Kelvin To Celsius</option>
                 <option value="3">Celsius To Fahrenheit</option>
@@ -29,18 +93,10 @@
                 <option value="6">Kelvin To Fahrenheit</option>
 
             </select><br><br>
-
-
-
-
             <p id="result"></p>
         </div>
 
     </div>
-
-
-
-
     <script>
         function showResult() {
             let selectElement = document.getElementById("mySelect");
@@ -82,5 +138,4 @@
 
     </script>
 </body>
-
 </html>
