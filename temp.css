@@ -1,0 +1,99 @@
+/* Base Styles for Mobile */
+.box {
+    background-color: beige;
+    height: 290px;
+    width: 100%; /* Make the box take full width on small screens */
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px grey;
+    padding: 10px; /* Add padding for better layout */
+}
+.box:hover{
+  transform:translateX(-10px);
+  box-shadow: 0 0 15px aqua;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Remove fixed height for better mobile scaling */
+    padding: 20px; /* Add padding for small screens */
+}
+
+input, select {
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Optional max width to limit large inputs */
+    margin-bottom: 10px; /* Add some spacing */
+    border-radius: 5px;
+    border: 2px inset black;
+}
+
+input:hover {
+    color: blue;
+}
+
+select:hover {
+    color: green;
+}
+
+h5 {
+    animation: slide1 0.8s ease-out;
+}
+
+@keyframes slide1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#result {
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    animation: slide 6s ease-in-out;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Styles for Tablet and Laptop Screens */
+@media (min-width: 768px) {
+    .box {
+        width: 50%; /* Make box smaller on larger screens */
+        height: 300px;
+    }
+
+    .nav {
+        height: 93vh; /* Full height on larger screens */
+    }
+
+    input, select {
+        width: 80%; /* Adjust input size for larger screens */
+    }
+
+    #result {
+        margin-right: 800px; /* This will only apply on larger screens */
+    }
+}
+
+/* Styles for Larger Screens (Desktops) */
+@media (min-width: 1024px) {
+    .box {
+        width: 30%; /* Smaller width for desktops */
+    }
+
+    input, select {
+        width: 60%; /* Adjust input width further */
+    }
+}
